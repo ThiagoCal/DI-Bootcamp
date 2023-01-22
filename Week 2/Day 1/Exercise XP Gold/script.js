@@ -21,3 +21,35 @@ let concatenated = `${str1} ${str2}`
 console.log(concatenated)
 
 //Exercise 3
+
+let firstNumber = prompt('This is a calculator. Write a number', 3);
+
+let num1 = parseInt(firstNumber);
+console.log(num1);
+
+
+let secondNumber = prompt('Write a second number', 2);
+let num2 = parseInt(secondNumber);
+console.log(num2);
+
+let operator = prompt('Choose the operation', "+ - * /")
+
+function calculator(num1, num2, operator){
+    if (operator === "+"){
+        return num1 + num2 
+    }
+    else if (operator === "-"){
+        return num1 - num2 
+    }
+    else if (operator === "*"){
+        return num1 * num2 
+    }
+    else if (operator === "/"){
+        return num1 / num2 
+    }
+    else {
+        return "Invalid parameter"
+    }
+}
+
+alert(`The result of this calculation is: ${calculator(num1, num2, operator)}`);
