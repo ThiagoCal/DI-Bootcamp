@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body class="main">
+    <nav class="navbar">
+        <ul class="nav-flex">
+            <div class="logo">
+                <li>
+                    Home
+                </li>
+            </div>
+            <div class="links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </div>
+        </ul>
+    </nav>
+    <banner class="banner">
+        <div class="container banner-text">
+            <p class="title">Hello, Welcome To My Official Website</p>
+            <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis illo aperiam saepe.</p>
+            <button class="button" type="button">See More</button>
+        </div>
+    </banner>
+    <main class="container">
+        <section id="about" class="about">
+            <div class="section-title">
+                <p>About Me</p>
+            </div>
+            <div class="content">
+                <div class="photo"><img src="images/foto-thiago.jfif" alt="" class="about-photo"></div>
+                <div class="about-text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Perspiciatis illo aperiam saepe.Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit.
+                    Perspiciatis illo aperiam saepe.Perspiciatis
+                     illo aperiam saepe.Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit.
+                    Perspiciatis illo aperiam saepe.</p>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio" class="portfolio">
+            <div class="section-title">
+                <p>Portfolio</p>
+            </div>
+            <div class="portfolio-content">
+                <div class="works"><img src="images/site1.png" alt="" class="sites"></div>
+                <div class="works"><img src="images/site2.png" alt="" class="sites"></div>
+                <div class="works"><img src="images/site3.png" alt="" class="sites"></div>
+                <div class="works"><img src="images/site4.png" alt="" class="sites"></div>
+                <div class="works"><img src="images/site5.png" alt="" class="sites"></div>
+                <div class="works"><img src="images/site6.png" alt="" class="sites"></div>
+            </div>
+        </section>
+        <section id="blog" class="portfolio">
+            <div class="section-title">
+                <p>Blog</p>
+            </div>
+            <div class="portfolio-content">
+                <div class="card">
+                    <div class="image-c-container">
+                        <img src="images/site2.png" alt="" class="card-image">
+                    </div>
+                    <div class="card-container">
+                        <h4><b>Create Your Blog With Reach</b></h4>
+                        <p>Thiago Kimelblat</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image-c-container">
+                        <img src="images/site2.png" alt="" class="card-image">
+                    </div>
+                    <div class="card-container">
+                        <h4><b>10 Tips to Start Using Node JS</b></h4>
+                        <p>Thiago Kimelblat</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="image-c-container">
+                        <img src="images/site2.png" alt="" class="card-image">
+                    </div>
+                    <div class="card-container">
+                        <h4><b>Elastic Search On Node JS</b></h4>
+                        <p>Thiago Kimelblat</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="vh"></div>
+        <section class="contact">
+            <div class="form-cta">
+                <div class="form-header">
+                    <h3>Get in Touch</h3>
+                </div>
+                <div class="contact-icons">
+                    <i class="fa-brands fa-github"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+            <div class="vl"></div>
+            <div class="form">
+                <!-- <label for="contact-name">Your Name</label> -->
+                <input type="text" id="contact-name" class="form-field" placeholder="Your name">
+                <!-- <label for="email">Email</label> -->
+                <input type="email" id="email" class="form-field" placeholder="Email Address"> 
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
+                <div class="submit">
+                    <input type="submit" value="Submit" class="submit-btn">
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,41 @@
+h3{
+    text-decoration: underline;
+}
+
+.highlight{
+    background-color: yellow;
+}
+
+.senses{
+    margin-left: 3em;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.media{
+   border: 5px solid blue;
+   max-width: 500px;
+   max-height: 450px;
+}
+
+.box{
+    text-align: center;
+    justify-content: center;
+    border: 1px solid red;
+    color: red;
+}
+
+.container{
+   display: block;
+   margin: auto;
+   width: 1000px;
+}
+
+table, th, td {
+    border:1px solid black;
+  }

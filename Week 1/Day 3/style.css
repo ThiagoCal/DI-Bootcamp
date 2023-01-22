@@ -1,0 +1,185 @@
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 50px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.name{
+    border: 1px solid black;
+}
+
+.photo{
+    border: 1px solid blue;
+}
+
+.container{
+    border: 2px solid red;
+    height: 500px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr 3fr;
+    gap: 8px 12px;
+}
+
+.container div{
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact{
+    height: 100%;
+}
+.education{
+    grid-row: span 2;
+}
+
+.contact{
+    grid-row: 1 / span 2;
+    grid-column: 1 / span 2;
+}
+
+.title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.exercise{
+    border: 1px solid yellow;
+    height: 600px;
+    display:grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr 3fr;
+    gap: 8px 12px;
+    margin-top: 10px;
+}
+
+.exercise div{
+    border: 1px solid red;
+}
+
+.exercise div:nth-child(odd) {
+    background-color: rgb(90, 132, 145);
+}
+
+.exercise div:nth-child(even) {
+    background-color: rgb(161, 196, 80);
+}
+
+.seventh{
+    grid-column: 1 / span 2;
+}
+
+
+.exercise-2{
+    border: 1px solid yellow;
+    height: 800px;
+    display:grid;
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px 12px;
+    margin-top: 10px;
+}
+
+.header1{
+    background-color: blue;
+    grid-column: span 3;
+}
+
+.hero{
+    background-color: grey;
+    grid-row: span 2;
+}
+
+.main{
+    background-color: yellow;
+    grid-row: span 3;
+    grid-column: span 2;
+}
+
+.sidebar{
+    background-color: green;
+    grid-row: span 3;
+}
+
+.extra{
+    background-color: blueviolet;
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.images{
+    background-color: darkgreen;
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.posts{
+    background-color: pink;
+    grid-row: span 2;
+}
+
+.footer{
+    background-color: orange;
+    grid-column: span 3;
+}
+
+.exercise-3{
+    display: grid;
+    height: 800px;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px 12px;
+}
+
+
+.header2{
+    background-color: blue;
+    grid-column: span 3;
+}
+
+.hero1{
+    background-color: grey;
+    grid-row: span 2;
+}
+
+.main1{
+    background-color: yellow;
+}
+
+.sidebar1{
+    background-color: green;
+}
+
+.extra1{
+    background-color: blueviolet;
+    grid-column: span 2;
+}
+
+.images1{
+    background-color: darkgreen;
+    grid-column: span 2;
+}
+
+.posts1{
+    background-color: pink;
+}
+
+.footer1{
+    background-color: orange;
+    grid-column: span 3;
+}

@@ -1,0 +1,11 @@
+.radio-form > input:checked + label {
+    color: blue;
+}
+
+.radio-form > input:not(:checked) + label {
+    color: yellow;
+}
+
+.checkbox-form > input[type="checkbox"]:checked + label {
+    color: rgb(226, 83, 43);
+}
