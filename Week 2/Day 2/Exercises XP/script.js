@@ -79,7 +79,7 @@ if(newDog === "Chihuahua"){
 // }
 
 //Exercise 4
-const users = [];
+const users = ["Lea123", "Princess45", "cat&doglovers", "helooo@000"];
 
 
 if(users.length === 0){
