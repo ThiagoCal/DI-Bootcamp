@@ -121,8 +121,11 @@ for(let obj in details){
 
 const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
 
+let result = ""
+names.sort()
 for(let i = 0; i < names.length; i++){
-    console.log(names[i][0])
+    result += names[i][0]
 }
 
-console.log()
+console.log(result)
+
