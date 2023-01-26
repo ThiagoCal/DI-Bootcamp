@@ -102,3 +102,27 @@ for(let position in object){
     console.log(position)
     console.log(object[position])
 }
+
+const details = {
+    my: 'name',
+    is: 'Rudolf',
+    the: 'raindeer'
+}
+
+
+let sentenceDetails = Object.entries(details).join(' ')
+sentenceDetails = sentenceDetails.replace(/,/g, " ")
+console.log(sentenceDetails);
+
+for(let obj in details){
+    console.log(`${obj} ${details[obj]}`)
+}
+
+
+const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+
+for(let i = 0; i < names.length; i++){
+    console.log(names[i][0])
+}
+
+console.log()
