@@ -1,0 +1,6 @@
+.result-box{
+    display: flex;
+    width: 100px;
+    padding: 1em;
+    border: 1px solid black;
+}
