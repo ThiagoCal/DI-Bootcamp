@@ -35,6 +35,8 @@ function addBooks(){
         let imageTd = document.createElement("td")
         let imageBook = document.createElement("img")
         imageBook.setAttribute("src", book["image"])
+        imageBook.style.width ="100px"
+        imageBook.style.height = "120px"
         imageTd.appendChild(imageBook)
         tableRow.appendChild(imageTd)
 
