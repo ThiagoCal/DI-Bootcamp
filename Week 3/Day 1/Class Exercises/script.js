@@ -30,5 +30,5 @@ for(let list of lists){
 lists[0].classList.add("university","attendance")
 
 
-division.setAttribute('style', "background-color: blue; padding: 1em;")
+
 
