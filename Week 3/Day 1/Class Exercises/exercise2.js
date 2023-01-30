@@ -37,8 +37,10 @@ if(division.hasAttribute('style', "background-color: blue;")){
     //     console.log()
     //     console.log(element2.innerHTML)
     // }
-    let string = ""
+    let array = []
     for (i = 0; i < li.length; i++) { 
-        string += `Hello ${li[i].innerHTML}` 
+        array.push(li[i].innerHTML)
+        // console.log(`Hello ${li[0].innerHTML} and ${li[i].innerHTML}`) 
       } 
+    alert(`Hello ${array[0]} and ${array[1]}`)
 }
