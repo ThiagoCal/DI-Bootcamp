@@ -1,0 +1,10 @@
+#banner {
+    padding: 3em;
+    background-color: blue;
+    color: white;
+    /* display: none; */
+}
+
+.count {
+    color: white;
+}
