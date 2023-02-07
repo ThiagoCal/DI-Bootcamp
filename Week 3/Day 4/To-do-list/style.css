@@ -1,0 +1,30 @@
+i{
+    font-size: 2em;
+}
+#main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container{
+    width: 400px;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    flex-direction: column;
+}
+
+h2{
+    display: flex;
+    align-self: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.done{
+    text-decoration: line-through;
+}
