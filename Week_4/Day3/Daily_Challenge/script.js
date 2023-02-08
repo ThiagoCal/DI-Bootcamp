@@ -24,7 +24,7 @@ const inventory2 = [
   { id: 5, car_make: "Honda", car_model: "Accord", car_year: 1995 },
 ];
 
-function sortCarInventoryByYear(carInventory2){
+function sortCarInventoryByYear([...carInventory2]){
   let sort = carInventory2.sort((x,y)=>{
     return x.car_year - y.car_year
   })
@@ -32,3 +32,4 @@ function sortCarInventoryByYear(carInventory2){
 }
 
 console.log(sortCarInventoryByYear(inventory2))
+console.log(inventory2)
