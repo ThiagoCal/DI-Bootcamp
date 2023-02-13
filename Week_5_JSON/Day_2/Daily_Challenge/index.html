@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+      .gif{
+        padding: 0.5em;
+        border: 1px solid black;
+        margin: 1em;
+      }
+      .gif-img{
+        width: 200px;
+      }
+  </style>
+</head>
+<body>
+  <section id="container">
+    <form id="formGiphy" name="formGiphy">
+      <label name="search" type="text" id="search">Search for a gif:</label>
+      <input id="search" name="search" type="text">
+      <select id="rating" autofocus>
+        <option value="g">g</option>
+        <option value="pg">pg</option>
+        <option value="pg13">pg13</option>
+        <option value="r">r</option>
+      </select>
+      <p><input type="submit" value="Search"/></p>
+    </form>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
