@@ -15,7 +15,8 @@ function searchGif(e){
   const query = form.elements[0].value
   const rating = form.elements[1]
   const ratingquery = rating.options[rating.selectedIndex].value
-  // console.log(ratingquery)
+  console.log(ratingquery)
+  // xhr.open("GET", `https://api.giphy.com/v1/gifs/search?q=sun&offset=2&limit=10&rating=${ratingquery}&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My`)  exercise 2 Exercise XP
   xhr.open("GET", `https://api.giphy.com/v1/gifs/search?q=${query}&offset=0&limit=25&rating=${ratingquery}&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My`)
   xhr.send()
 }
