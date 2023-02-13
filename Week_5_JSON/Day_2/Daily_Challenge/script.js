@@ -25,7 +25,7 @@ xhr.onload = function(){
     console.log("error")
   } else{
     const data = JSON.parse(xhr.response)
-    // console.log(data.data);
+    console.log(data.data);
     displayGif(data.data)
   }
 }
@@ -34,24 +34,48 @@ function displayGif(gif){
   gif.forEach(elem => {
     // console.log(elem)
       const {
-          title, 
+          title,
+          id, 
           images: {original : {url}},
       } = elem;
 
       const card = document.createElement("div");
       card.classList.add("gif");
+      card.setAttribute("id", id)
       const titleP = document.createElement("p");
       const gifContainer = document.createElement("div");
       const webImg = document.createElement("img")
       const textName = document.createTextNode(title);
-      console.log(url)
       webImg.src = url
       webImg.setAttribute("class", "gif-img")
-      // webLink.innerHTML = position_one
+      const deleteBtn = document.createElement("button")
+      deleteBtn.setAttribute("value", "delete")
+      deleteBtn.innerText = "Delete"
+      deleteBtn.addEventListener("click", deleteGif)
       titleP.appendChild(textName);
       gifContainer.appendChild(webImg)
+      gifContainer.appendChild(deleteBtn)
       card.appendChild(titleP);
       card.appendChild(gifContainer);
       division.appendChild(card);
   })
+}
+
+
+function deleteGif(e){
+  e.preventDefault()
+  console.log(e.target)
+  currentGifId = e.target.parentElement.parentElement.id
+  currentGif = document.getElementById(currentGifId)
+  currentGif.remove()
+}
+
+const deleteSearch = document.querySelector("#deleteSearch")
+deleteSearch.addEventListener("click", deleteGifs)
+
+function deleteGifs(){
+  let divGif = document.querySelectorAll(".gif")
+  if(divGif){
+    divGif.forEach(e => e.remove())
+  }
 }
