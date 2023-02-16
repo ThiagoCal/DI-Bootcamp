@@ -4,26 +4,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <title>Exchange Rate</title>
 </head>
 <body>
   <section id="container">
     <form id="exchangeform" name="exchangeform">
-      <label for="from">From:</label>
-      <input id="from" name="from" type="text">
-      <label for="to-coin">To:</label>
-      <input id="lastname" name="lastname" type="text">
-      <p><input type="submit" value="Send" /></p>
+
+      <label for="fromCurrency">From:</label>
+      <select id="fromCurrency" name="fromCurrency" type="text"></select>
+
+      <label for="toCoin">To:</label>
+      <select id="toCoin" name="toCoin" type="text"></select>
+
+      <label for="amount">Amount:</label>
+      <input id="amount" name="amount" type="number"/>
+
+      <p><input type="submit" value="Convert"/></p>
     </form>
   </section>
   <script src="script.js"></script>
 </body>
 </html>
-
-<form id="exercise3" name="exercise3" method="GET" action="index.html">
-  <label for="firstname">First Name:</label>
-  <input id="firstname" name="firstname" type="text">
-  <label for="lastname">Last Name:</label>
-  <input id="lastname" name="lastname" type="text">
-  <p><input type="submit" value="Send" /></p>
-</form>
