@@ -1,23 +1,24 @@
-
-// let url = "https://v6.exchangerate-api.com/v6/ce284318aa428eed3dce93d0/codes"
-
-
 let form = document.forms.exchangeform
 
 form.addEventListener("submit", getRate)
 
 async function getCodes(){
-  const response = await fetch("https://v6.exchangerate-api.com/v6/ce284318aa428eed3dce93d0/codes")
-  const data = await response.json()
-  let currenciesArray = data.supported_codes
-  const optionsCurrency = await selectCurrency(currenciesArray)
-  return optionsCurrency
+  try{
+    const response = await fetch("https://v6.exchangerate-api.com/v6/ce284318aa428eed3dce93d0/codes")
+    const data = await response.json()
+    let currenciesArray = data.supported_codes
+    const optionsCurrency = selectCurrency(currenciesArray)
+    return optionsCurrency
+  }
+  catch(err){
+    console.log("Error getting data to Select options")
+  }
 }
 
 getCodes()
 
 
-async function selectCurrency(data){
+function selectCurrency(data){
   let selectData = ""
   for(let i = 0; i < data.length; i++){
     selectData += `<option value="${data[i][0]}"> ${data[i][0]} - ${data[i][1]}</option>`
@@ -33,15 +34,20 @@ async function getRate(e){
   let fromCurrency = form.elements.fromCurrency.value
   let toCurrency = form.elements.toCoin.value
   let amount = form.elements.amount.value
-  const response = await fetch(`https://v6.exchangerate-api.com/v6/ce284318aa428eed3dce93d0/pair/${fromCurrency}/${toCurrency}/${amount}`)
-  const data = await response.json()
-  let exchangeRate = data.conversion_rate
-  let conversionResult = data.conversion_result
-  let displayRes = await displayResult(exchangeRate, conversionResult)
-  return displayRes
+  try{
+    const response = await fetch(`https://v6.exchangerate-api.com/v6/ce284318aa428eed3dce93d0/pair/${fromCurrency}/${toCurrency}/${amount}`)
+    const data = await response.json()
+    let exchangeRate = data.conversion_rate
+    let conversionResult = data.conversion_result
+    let displayRes = displayResult(exchangeRate, conversionResult)
+    return displayRes
+  }
+  catch(err){
+    console.log("Error")
+  }
 }
 
-async function displayResult(rate, conversionResult){
+function displayResult(rate, conversionResult){
   let section = document.querySelector("#container")
   let divResults = document.createElement("div")
   divResults.setAttribute("class", "results-div")
