@@ -244,6 +244,7 @@ console.log(soma)
 //     ```javascript
        const input = [ 1, 2, 3, 4, 5 ];
        let square = input.map(elem => elem *elem)
+       // OR input.forEach((elem, index)=> input[index] **= 2)
        console.log("input", square) // [ 1, 4, 9, 16, 25]
 //     ```
 // ​
@@ -272,7 +273,10 @@ console.log(soma)
           let first = elem[0]
           initials += first
          })
+
+         const initials2 = input2.split(' ').map((word)=> word[0]).join("")
          console.log(initials)//'GRRM'
+         console.log(initials2)//'GRRM'
 //      ```
 // ​
 // #### Object and Classes
@@ -297,7 +301,36 @@ console.log(soma)
 //     ```
 // ​
 // 21. How would you change the code above, so that when you modify the key `color` from the parameter `myshirt`, it won't change the global variable `tshirt` ?
+
+    function changeTshirt (myshirt){
+      let newObj = Object.assign({}, myshirt)
+      newObj.color = "red"
+      console.log("myshirt", myshirt); // By reference - here it will show the object as it was with blue color and price 10
+      console.log(newObj)
+      // myshirt.color = "red" // in this line it is changing the object color to red, not only inside the function, but it also changes it outside
+        // console.log("myshirt", myshirt); //this is the parameter // here it will return the object myshirt with the color red
+        console.log("tshirt", tshirt);   //this is the global variable // here it will return the global variable tshirt with also the color red
+    }
+    const tshirt = {
+        color : "blue",
+        price : 10
+    }
+    changeTshirt(tshirt)
+// OR
+//     function changeTshirt ({...myshirt}){ spread unpack the values of tshirt into myshirt which is an array and they don't use the same reference
+//         console.log("myshirt", myshirt); 
+//         console.log("myshirt", myshirt); 
+//         console.log("tshirt", tshirt);   
+//     }
 // ​
+// ​
+//     const tshirt = {
+//         color : "blue",
+//         price : 10
+//     }
+// ​
+//     changeTshirt(tshirt)
+
 // 22. Use object destructuring to retrieve the value of the keys `france` and `spain`
 // ​
 //     ```javascript
@@ -309,24 +342,23 @@ console.log(soma)
 //          }
 //        }  
 //     ```
-// ​
+//const foot = {type, clubs: {france: teamA , spain: teamB}} ​= football
+//
 // 23. Use object destructuring in the function to retrieve the value of the keys `france` and `spain`
 // ​
 //     ```javascript
-//      function retrieveSports (//here) {
-//         const sentence = `My favorite football teams are ${franceTeam} and ${spainTeam}`;
-//         console.log(sentence);
-//      }
-// ​
-//      const football = {
-//          type: "sport",
-//          clubs: {
-//            france : "Paris Saint-Germain",
-//            spain : "Atlético Madrid",
-//          }
-//        }  
-// ​
-//      retrieveSports(football)
+     function retrieveSports ({clubs: {france: franceTeam, spain: spainTeam}}) {
+        const sentence = `My favorite football teams are ${franceTeam} and ${spainTeam}`;
+        console.log(sentence);
+     }
+     const football = {
+         type: "sport",
+         clubs: {
+           france : "Paris Saint-Germain",
+           spain : "Atlético Madrid",
+         }
+       }  
+     retrieveSports(football)
 //     ```
 // ​
 // 24. What will be printed in the console
@@ -345,6 +377,7 @@ console.log(soma)
 // ​
 //     const cake = new Item("Chocolate Cake", 10);
 //     cake.displayInfo();
+//Answer 'Chocolate Cake is for $10'
 //     ```
 // ​
 // #### Promises
@@ -360,7 +393,8 @@ console.log(soma)
 //         console.log(data)
 //       })
 //     ```
-// ​
+// ​Answer: It will return 'SUCESS!'
+//
 // 26. What will be displayed by the following code, after 2 seconds?
 // ​
 //     ```javascript
@@ -374,25 +408,28 @@ console.log(soma)
 //        console.log(data);
 //     });
 //     ```
+// Answer:
+// It will display "OK"
 // ​
 // 27. Consider the following `async` function and its output. What will be displayed to the console when calling the `test()` function? Explain the process
 // ​
 //     ```javascript
-//     async function test() {
-//       let result = 'first!';
+    async function test() {
+      let result = 'first!';
       
-//       const promise = new Promise((resolve, reject) => {
-//         setTimeout(() => resolve('done!'), 1000);
-//       });
+      const promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve('done!'), 1000);
+      });
     
-//       result = await promise;
+      result = await promise;
     
-//       console.log(result);
-//     }
+      console.log(result);
+    }
     
-//     test();
+    test();
+//  Answer: after one second it will return 'done!'
 //     ```
-// ​
+// ​ 
 // 28. Use **async await**, and **the fetch API** to fetch a fact on cats and display it. Use this third party API :  `https://catfact.ninja/fact`
 //     1. In the HTML file, create a button, everytime you click it you will add a random cat fact on the DOM 
 //     2. In the JS file, create 2 functions : one to fetch data from API, the other one to display it on the page using the DOM
