@@ -1,0 +1,21 @@
+-- CREATE TABLE boss(
+-- 	boss_id SERIAL PRIMARY KEY,
+-- 	boss_type VARCHAR(50) NOT NULL,
+-- 	dept_number INTEGER UNIQUE REFERENCES DEPARTMENT (DEPTCODE)
+-- )
+
+-- ALTER TABLE boss 
+-- ADD COLUMN boss_name VARCHAR(50) NOT NULL;
+
+-- INSERT INTO boss(boss_name, boss_type, dept_number)
+-- VALUES
+-- ('jill', 'mad', (SELECT DEPTCODE FROM DEPARTMENT WHERE DEPTNAME ='SOFTWARE' )),
+-- ('bill', 'sad', (SELECT DEPTCODE FROM DEPARTMENT WHERE DEPTNAME ='SALES' )),
+-- ('frank', 'glad', (SELECT DEPTCODE FROM DEPARTMENT WHERE DEPTNAME ='MARKETING' )),
+-- ('avril', 'wears plaid', (SELECT DEPTCODE FROM DEPARTMENT WHERE DEPTNAME ='ADMIN' ))
+
+SELECT boss_name, boss_type, DEPTNAME
+FROM Boss
+inner join DEPARTMENT
+on Boss.dept_number = DEPARTMENT.DEPTCODE
+WHERE DEPTNAME = 'SALES'

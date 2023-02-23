@@ -45,8 +45,7 @@
 
 -- SELECT DISTINCT city FROM city_info WHERE city ILIKE 's%';
 
--- INSERT INTO city_info (event_datetime, city, temperature, light, airquality_raw, sound, humidity, dust)
--- VALUES
--- (CURRENT_TIMESTAMP, 'Tel Aviv', 20, 200, 18, 1200, 40, 1000);
+-- ,
+;
 
 -- SELECT * FROM city_info WHERE city = 'Tel Aviv' ORDER BY event_datetime DESC LIMIT 5;
