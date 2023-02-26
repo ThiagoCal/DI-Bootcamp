@@ -166,29 +166,23 @@ let button = document.querySelector("#insertP");
 let division = document.querySelector("#container")
 let counter = 0
 let addP = (e) => {
-  e.preventDefault();
   counter++
+  let paragraph = document.createElement("p")
+  paragraph.setAttribute("class", "parag")
+  let text;
   if(counter % 3 === 0){
-    let paragraph = document.createElement("p")
-    paragraph.setAttribute("class", "parag")
-    division.appendChild(paragraph)
-    let hello = document.createTextNode("Hello")
-    paragraph.appendChild(hello)
-    paragraph.addEventListener("mouseover", changeColor)
+     text= document.createTextNode("Hello")
   }else{
-    let paragraph = document.createElement("p")
-    paragraph.setAttribute("class", "parag")
-    division.appendChild(paragraph)
-    let newText = document.createTextNode("New Paragraph")
-    paragraph.appendChild(newText)
-    paragraph.addEventListener("mouseover", changeColor)
+    text= document.createTextNode("New Paragraph")
   }
+  paragraph.appendChild(text)
+  paragraph.addEventListener("mouseover", changeColor)
+  division.appendChild(paragraph)
 }
 button.addEventListener('click', addP)
 
 //       2. Part II : Add to each new paragraph, an event listener of mouse over. When you hover on a paragraph, the paragraph should become red (ie. color of the                        text).
 let changeColor = (e) => {
-  e.preventDefault();
   e.target.classList.value = "red";
   console.log(e.target.classList.value)
 }
@@ -210,7 +204,7 @@ for(let i = 0; i < marks.length; i++){
 console.log(sum)
 
 let soma = 0
-for(elem of marks){
+for(let elem of marks){
   soma = soma + elem
 }
 console.log(soma)
@@ -342,7 +336,7 @@ console.log(soma)
 //          }
 //        }  
 //     ```
-//const foot = {type, clubs: {france: teamA , spain: teamB}} ​= football
+//const {type, clubs: {france: teamA , spain: teamB}} ​= football
 //
 // 23. Use object destructuring in the function to retrieve the value of the keys `france` and `spain`
 // ​
