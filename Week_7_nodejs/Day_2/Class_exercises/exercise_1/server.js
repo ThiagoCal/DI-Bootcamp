@@ -1,14 +1,17 @@
 const express = require('express');
 const {products} = require('./database/products.js');
 const cors = require('cors');
+const dotenv = require('dotenv')
 const app = express();
 app.use(cors());
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use('/', express.static(__dirname + '/public'));
+dotenv.config()
 
-app.listen(5000, () =>{
-  console.log('run port 5000');
+
+app.listen(process.env.PORT, () =>{
+  console.log(`run port ${process.env.PORT}`);
 })
 
 app.get('/api/products', (req, res) =>{
@@ -52,4 +55,31 @@ app.post('/api/products', (req,res)=>{
   console.log(req.body);
   res.status(200).json(products)
   // res.sendStatus(200);
+})
+
+app.put('/api/products/:id', (req,res)=>{
+  const id = req.params.id;
+  const index = products.findIndex(item => item.id == id);
+  if(index === -1){
+    return res.status(404).json({msg:'product not found'})
+  }
+  const updateProduct = {
+    id: products[index].id,
+    name: req.body.name,
+    price: req.body.price,
+    description: req.body.description
+  }
+
+  products[index] = updateProduct
+  res.status(200).json(products)
+})
+
+app.delete('/api/products/:id',(req,res)=>{
+  const id = req.params.id;
+  const index = products.findIndex(item => item.id == id);
+  if(index === -1){
+    return res.status(404).json({msg: 'product not found'});
+  }
+  products.splice(index, 1);
+  res.status(200).json(products);
 })

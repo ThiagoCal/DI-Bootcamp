@@ -8,17 +8,40 @@ async function showHobby(){
     console.log(err)
   }
 }
-
-getData();
-
 const displayProducts = (item) => {
   let html = `<div>${item}</div>`
   document.getElementById("container").innerHTML = html
 }
 
+
+
+
+const sendData = (e) =>{
+  e.preventDefault();
+  console.log(e)
+  const email = e.target.email.value;
+  const message = e.target.message.value;
+
+  fetch('/formData',
+    {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify({email, message})
+    }
+  ).then(res => res.json())
+  .then(data => {
+    console.log(data)
+  })
+  .catch(err =>
+    console.log(err)
+  )
+}
+
 function validateEmail(mail) 
 {
- if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form.email.value))
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
   {
     return (true)
   }
@@ -26,9 +49,9 @@ function validateEmail(mail)
     return (false)
 }
 
-function validateMessage(mesage) 
+function validateMessage(message) 
 {
- if (typeof form.message.value === 'string')
+ if (typeof message === 'string')
   {
     return (true)
   }
