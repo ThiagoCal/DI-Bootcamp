@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Add items to your shopping list</h2>
+  <!-- <form id="form" action="/api/shopping_list/formData" method="post"> -->
+    <form id="form" onsubmit="sendData(event)">
+      <label for="product">Product you want to add:</label>
+      <input type="text" id="product" name="product" />
+      <label for="quantity">Quantity:</label>
+      <input type="text" id="quantity" name="quantity" />
+      <input type="submit" value="Submit">
+    </form>
+    <div id="list"></div>
+    <script src="script.js"></script>
+</body>
+</html>

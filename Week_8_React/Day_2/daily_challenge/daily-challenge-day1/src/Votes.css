@@ -1,0 +1,22 @@
+.language-div {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.votes-div{
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.votes-div p{
+  margin:0.5em;
+}
+
+.btn-vote{
+  width: 60px;
+  height: 60px;
+  background-color: antiquewhite;
+}

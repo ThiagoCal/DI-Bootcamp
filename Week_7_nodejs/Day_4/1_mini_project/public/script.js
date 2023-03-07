@@ -17,7 +17,7 @@ const getData = async (e) =>{
 }
 
 // const showList = (data) =>{
-
+  
 // }
 
 // const getData = (e) =>{

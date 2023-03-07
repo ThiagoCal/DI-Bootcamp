@@ -24,6 +24,8 @@ db('products')
   console.log(err)
 })
 
+module.exports = {db};
+
 // db.select('*').from('country').orderBy('last_update', 'desc').then(rows =>{
 //   console.log(rows)
 // })
