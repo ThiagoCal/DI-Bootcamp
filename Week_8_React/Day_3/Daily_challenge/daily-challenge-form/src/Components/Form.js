@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Results from './Results'
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 export default class Form extends Component {
   constructor(){
@@ -30,10 +30,10 @@ export default class Form extends Component {
     formData.append("lactoseFree", this.state.dietary.includes("lactoseFree") ? "on" : "off")
     formData.append("nutsFree", this.state.dietary.includes("nutsFree") ? "on" : "off")
     formData.append("isVegan", this.state.dietary.includes("isVegan") ? "on" : "off")
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const queryString = formData.toString();
     const url = queryString ? `/?${queryString}` : '/';
-    navigate(`localhost:3000${url}`)
+    // navigate(`localhost:3000${url}`)
   }
   handleChange = (e)=>{
     let value = ''

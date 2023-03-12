@@ -10,21 +10,34 @@ export default class Example2 extends Component {
     }
   }
   render() {
-    let example2 = this.state.data.Skills.map(item => item)
-    console.log(example2)
-    let element = example2.map(item => item.Area)
+    // let example2 = this.state.data.Skills.map(item => item)
+    // console.log(example2)
+    // let element = example2.map(item => item.Area)
 
     return (
       <>
-      <h3>{element}</h3>
-      <span>
-        {example.Skills.map((skill) => (
-          <h3>{skill.Area}</h3>
-          skill.SkillSet.map((skillItem, j) => (
-            <span key={j}>{skillItem.Name} </span>
-          ))
-        ))}
-      </span>
+        <span>
+          {
+            this.state.data.Skills.map((skill) => {
+              return(
+                <>
+                <h3>{skill.Area}</h3><br/>{
+                  skill.SkillSet.map(elements => {
+                    return(
+                      <>
+                        <span>{elements.Name}</span><br/>
+                      </>
+                    )
+                  })
+                }
+                </>
+              )
+            }
+              
+            )
+          }
+        </span> <br/>
     </>
-    )}
+    )
+  }
 }
