@@ -8,21 +8,18 @@ const MovieDetails = (props) => {
     console.log('props',props)
     if(!props.selectedMovie) {
         return (
-            <div className="details-container" style={{width: '70%'}}>
+            <div>
                 <h2>Movie</h2>
-                <div className="properties">
+                <div>
                     <p>Select Movie</p>
                 </div>
             </div>
-            
         )       
-    }
-    else{
+    }else{
         return (
-        
-            <div className="details-container">
+            <div>
                 <h2>Movie</h2>
-                <div className="properties">
+                <div>
                     <p>Title: {props.selectedMovie.title}</p>
                     <p>Release Date: {props.selectedMovie.releaseDate}</p>
                     <p>Rating: {props.selectedMovie.rating}</p>
