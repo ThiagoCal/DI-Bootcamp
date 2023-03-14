@@ -9,7 +9,7 @@ const Counter = (props) => {
     }, 1000);
   }
   const addIfOdd = () =>{
-    if(props.counter % 2 === 0){
+    if(props.counter % 2 !== 0){
       return props.add()
     }
   }

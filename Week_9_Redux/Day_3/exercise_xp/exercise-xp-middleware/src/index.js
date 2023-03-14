@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
-import { createStore } from 'redux'
+import { createStore, applyMiddleware  } from 'redux'
 import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
 
+import { logger } from './helpers/logger';
 import reducer from './Redux/reducer';
-const store = createStore(reducer)
+const log = applyMiddleware(logger)
+const store = createStore(reducer, log)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
