@@ -13,6 +13,12 @@ const getProductById = (pid) =>{
   .where({id:pid})
 }
 
+const searchProducts = (query) =>{
+  return db('products')
+  .select('id', 'name', 'price')
+  .whereILike('name', `${query}%`)
+}
+
 const insertProduct = (product) => {
   return db('products')
   .insert(product)
@@ -38,5 +44,6 @@ module.exports = {
   getProductById,
   insertProduct,
   updateProduct,
-  deleteProduct
+  deleteProduct,
+  searchProducts
 }

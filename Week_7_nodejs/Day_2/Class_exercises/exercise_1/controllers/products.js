@@ -1,4 +1,4 @@
-const  {getAllProducts, getProductById, insertProduct, updateProduct, deleteProduct} =  require('../modules/products.js')
+const  {getAllProducts, getProductById, insertProduct, updateProduct, deleteProduct, searchProducts} =  require('../modules/products.js')
 
 const _getAllProducts =(req,res) =>{
   getAllProducts()
@@ -20,10 +20,20 @@ const _getProductById = (req,res) =>{
   })
 }
 
+const _searchProducts = (req,res) =>{
+  searchProducts(req.query.q) //q is in the query path /?q= could be anything instead of q
+  .then(data =>{
+    res.json(data)
+  })
+  .catch(err =>{
+    console.log(err)
+  })
+}
+
 const _insertProduct = (req,res) =>{
   insertProduct(req.body)
   .then(data =>{
-    res.json(data)
+    _getAllProducts(req,res)
   })
   .catch(err =>{
     console.log(err)
@@ -52,5 +62,5 @@ const _deleteProduct = (req, res) =>{
 }
 
 module.exports = {
-  _getAllProducts, _getProductById, _insertProduct, _updateProduct, _deleteProduct
+  _getAllProducts, _getProductById, _insertProduct, _updateProduct, _deleteProduct, _searchProducts
 }

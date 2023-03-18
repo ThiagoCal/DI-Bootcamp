@@ -1,6 +1,6 @@
 async function getData(){
   try{
-    let response = await fetch("http://localhost:5000/api/products")
+    let response = await fetch("http://localhost:5001/api/products")
     let data = await response.json()
     showProducts(data)
   }
@@ -22,7 +22,7 @@ async function showData(){
   try{
     const prod_id = document.getElementById("show").value
     console.log(prod_id)
-    let response = await fetch(`http://localhost:5000/api/products/${prod_id}`)
+    let response = await fetch(`http://localhost:5001/api/products/${prod_id}`)
     let data = await response.json()
     // const arr = []
     // arr.push(data)
@@ -42,7 +42,7 @@ const displayProducts = (item) => {
 async function filterData(){
   try{
     const prod_name = document.getElementById("filter").value
-    let response = await fetch(`http://localhost:5000/api/search?q=${prod_name}`)
+    let response = await fetch(`http://localhost:5001/api/search?q=${prod_name}`)
     let data = await response.json()
     showProducts(data)
   }
